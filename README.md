@@ -1,10 +1,10 @@
-RESOURCES
+# RESOURCES
 The MNIS dataset used in this small project consists of 60,000 training images
 with labels and 10,000 examples with labels. It was created by
 
-Yann LeCun, Courant Institue, NYU
-Corinna Cortes, Google Labs, New York
-Christopher J.C. Burges, Microsoft Research, Redmond
+- Yann LeCun, Courant Institue, NYU<br>
+- Corinna Cortes, Google Labs, New York<br>
+- Christopher J.C. Burges, Microsoft Research, Redmond<br>
 
 Yann LeCun's version of the dataset, the one used in this project, can be found here:
 
