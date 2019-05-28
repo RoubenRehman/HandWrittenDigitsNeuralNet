@@ -14,6 +14,34 @@ def sigmoid_derivative(x):
     return x * (1 - x)
 
 
+# testing function
+def test_net():
+    for it in range(10000):
+
+        # feed forward
+        l0 = data_dict['test_images'][it].reshape((1, 784))
+        l1 = sigmoid(np.dot(l0, syn0))
+        l2 = sigmoid(np.dot(l1, syn1))
+        l3 = sigmoid(np.dot(l2, syn2))
+
+        percentage = np.amax(l3)
+
+        for i in range(l3.size):
+            if l3[0][i] == percentage:
+                guessed_number = i
+                break
+
+        print("Label: " + str(data_dict['test_labels'][it]))
+        print("Guessed: " + str(guessed_number) + " with a percentage of " + str(percentage * 100))
+
+        ans = input();
+        if ans == "exit":
+            break
+
+        else:
+            continue
+
+
 # path to resource data
 datapath = './resources/'
 files = os.listdir(datapath)
@@ -81,10 +109,11 @@ if query == "y":
             imsave(datapath+set+'/'+str(label)+'/%05d.png'%filenumber, image)
 
 else:
-    print("No output generated")
+    print("No output generated\n")
 
 # seed
-np.random.seed(1)
+seed = input("Enter a seed for the random gegnerator!")
+np.random.seed(int(seed))
 
 # Planned structure
 # Input Layer with
@@ -118,6 +147,17 @@ l0 = np.empty((1, 784))
 data_dict['train_images'] = data_dict['train_images'] / 255
 data_dict['test_images'] = data_dict['test_images'] / 255
 
+ans = input("\nSetup complete, do you want to test the net on the testing images before training (y/n)?\n")
+while ans != "y" and ans != "n":
+    ans = input("Setup complete, do you want to test the net on the testing images before training (y/n)?")
+
+if ans == "y":
+    print("Entering testing mode, type 'exit' to continue to training mode\n\n")
+    test_net()
+
+else:
+    print("\n\n")
+
 # Training
 for it in range(60000):
 
@@ -147,10 +187,12 @@ for it in range(60000):
     syn0 += l0.T.dot(l1_delta)
 
     if (it % 10000) == 0:
-        print(expt_out)
-        print(l3*100)
-        print("\n")
+        print("training...")
 
-print("Output after training")
-print("Label: " + str(data_dict['train_labels'][59999]))
-print(l3*100)
+# print("Output after training")
+# print("Label: " + str(data_dict['train_labels'][59999]))
+# print(l3*100)
+
+print("\n\nTraining completed, showing result on test samples. Press enter to continue, type 'exit' to exit!\n")
+test_net()
+
