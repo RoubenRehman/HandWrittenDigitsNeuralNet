@@ -9,7 +9,7 @@ import numpy as np
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
-
+# just a git test comment
 def sigmoid_derivative(x):
     return x * (1 - x)
 
@@ -195,4 +195,3 @@ for it in range(60000):
 
 print("\n\nTraining completed, showing result on test samples. Press enter to continue, type 'exit' to exit!\n")
 test_net()
-
