@@ -15,7 +15,7 @@ http://yann.lecun.com/exdb/mnist/
 
 I do not own this dataset, nor did I contribute to it obviously. All the credit goes to the creators mentioned above.
 I do not plan to earn money with it or use it in any comercial sense or form, this is very clearly only a private project to
-get myselfe into the development machine learning.
+get myselfe into the development of machine learning.
 
 
 # CODE
