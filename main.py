@@ -7,11 +7,11 @@ import numpy as np
 
 # Squashing function
 def sigmoid(x):
-    
+
     return 1 / (1 + np.exp(-x))
 
 
-# just a git test comment
+# Squashing function derivative 
 def sigmoid_derivative(x):
     return x * (1 - x)
 
@@ -45,7 +45,7 @@ def test_net():
 
 
 # path to resource data
-datapath = '/resources/'
+datapath = './resources/'
 files = os.listdir(datapath)
 
 

@@ -1,6 +1,21 @@
 # DISCLAIMER
 This is a very early draft I just wrote in a few hours for fun. Please don't expect a somewhat nice coding style or a proper documentation within the code. I certanly didn't care for style and elegance while writing this, but instead only cared for getting it to work and learn about the topic. If you ever stumble upon this repo, please feel free to use the code I botched together here for whatever your heart desires.
 
+# EXECUTION
+The program is written in Python 3. Although it doesn't need a whole lot of dependencies, I'd advise to set up some sort of virtual environment before running the code. After doing so, simply cd into the program directory and run
+
+```
+pip3 install -r requirements.txt
+```
+
+to install all necessary dependencies and finally
+
+```
+python main.py
+```
+
+to run the code.
+
 # RESOURCES
 The MNIS dataset used in this small project consists of 60,000 training images
 with labels and 10,000 examples with labels. It was created by
@@ -27,7 +42,7 @@ His video and GitHub can be found here:
 
 
 For the neural net, I modified jonasbostoen's code (aka polycode) to fit my needs. His original video and GitHub can be found here:
- 
+
 - https://www.youtube.com/watch?v=kft1AJ9WVDk
 - https://github.com/jonasbostoen/simple-neural-network
 
