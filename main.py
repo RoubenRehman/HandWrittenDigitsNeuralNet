@@ -11,7 +11,7 @@ def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 
-# Squashing function derivative 
+# Squashing function derivative
 def sigmoid_derivative(x):
     return x * (1 - x)
 
@@ -114,7 +114,7 @@ else:
     print("No output generated\n")
 
 # seed
-seed = input("Enter a seed for the random gegnerator!")
+seed = input("Enter a seed for the random gegnerator!\n")
 np.random.seed(int(seed))
 
 # Planned structure
@@ -149,9 +149,9 @@ l0 = np.empty((1, 784))
 data_dict['train_images'] = data_dict['train_images'] / 255
 data_dict['test_images'] = data_dict['test_images'] / 255
 
-ans = input("\nSetup complete, do you want to test the net on the testing images before training (y/n)?\n")
+ans = ""
 while ans != "y" and ans != "n":
-    ans = input("Setup complete, do you want to test the net on the testing images before training (y/n)?")
+    ans = input("Setup complete, do you want to test the net on the testing images before training (y/n)?\n")
 
 if ans == "y":
     print("Entering testing mode, type 'exit' to continue to training mode\n\n")
@@ -190,10 +190,6 @@ for it in range(60000):
 
     if (it % 10000) == 0:
         print("training...")
-
-# print("Output after training")
-# print("Label: " + str(data_dict['train_labels'][59999]))
-# print(l3*100)
 
 print("\n\nTraining completed, showing result on test samples. Press enter to continue, type 'exit' to exit!\n")
 test_net()
