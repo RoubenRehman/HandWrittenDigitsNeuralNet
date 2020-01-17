@@ -5,16 +5,13 @@ from skimage.io import imsave
 import numpy as np
 
 
-# Squashing function
+# Activation function
 def sigmoid(x):
-
     return 1 / (1 + np.exp(-x))
 
-
-# Squashing function derivative
+# Activation function derivative
 def sigmoid_derivative(x):
     return x * (1 - x)
-
 
 # testing function
 def test_net():
